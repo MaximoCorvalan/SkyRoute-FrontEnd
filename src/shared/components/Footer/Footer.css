@@ -1,0 +1,29 @@
+.site-footer {
+  width: 100%;
+  min-height: 20px;
+  box-sizing: border-box;
+  padding: 12px clamp(20px, 5vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #717375;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.site-footer span:first-child {
+  font-weight: 800;
+}
+
+.site-footer span:last-child {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 560px) {
+  .site-footer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
