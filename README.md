@@ -108,3 +108,15 @@ This was kept simple for the scope of the challenge. In a production environment
 
 
 ---
+
+## 🧩 Architecture Overview
+
+The frontend follows a simple and modular structure:
+
+* **Components**: UI is split into reusable components such as Search, TableFlight, and Confirm. Each component has a single responsibility.
+* **Services**: API calls are isolated in dedicated service files (AirportServices, FlightServices, BookingServices), keeping data fetching separate from UI logic.
+* **Context API**: Global state (such as flight results and airports) is managed using React Context to avoid prop drilling.
+* **Interfaces**: TypeScript interfaces define the shape of data exchanged between frontend and backend, improving type safety and maintainability.
+* **Configuration**: A central config file is used to define the API base URL, avoiding duplication across services.
+
+This structure keeps the codebase organized, easy to maintain, and scalable for future features.
