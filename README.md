@@ -106,11 +106,5 @@ https://localhost:7074/api
 
 This was kept simple for the scope of the challenge. In a production environment, this would be managed using environment variables.
 
-## 🧪 Future Improvements
-
-* Add unit and integration tests
-* Improve UI/UX and responsiveness
-* Add pagination or virtualization for large datasets
-
 
 ---
