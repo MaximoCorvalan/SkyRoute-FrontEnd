@@ -34,12 +34,14 @@ export const TableFlight = () => {
   const context = useBookingContext();
   const [sortOption, setSortOption] = useState<SortOption>("price-asc");
   const [selectedFlight, setSelectedFlight] = useState<FlightResult | null>(null);
+
   /**
    * Returns the flight results sorted according to the selected sort option.
    *
    * Sorting is handled on the frontend without making another backend request.
    */
   const sortedFlights = useMemo(() => {
+
     return [...context.FlightResult].sort((firstFlight, secondFlight) => {
       if (sortOption === "price-asc") {
         return (
@@ -58,6 +60,7 @@ export const TableFlight = () => {
       if (sortOption === "duration-asc") {
         return firstFlight.durationMinutes - secondFlight.durationMinutes;
       }
+
 
       return (
         timeToMinutes(firstFlight.departureTime) -
@@ -135,6 +138,8 @@ export const TableFlight = () => {
           </table>
         </div>
       </section>
+
+    
 
       {selectedFlight && (
         <Confirms flight={selectedFlight} onClose={() => setSelectedFlight(null)} />

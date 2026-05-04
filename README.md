@@ -1,75 +1,116 @@
-# React + TypeScript + Vite
+# ✈️ SkyRoute Frontend (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Description
 
-Currently, two official plugins are available:
+This is the frontend application for the SkyRoute Flight Search & Booking challenge.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application allows users to:
 
-## React Compiler
+* Search flights between airports
+* Sort results by price, duration, and departure time
+* View flight details
+* Complete a booking with document validation (National ID / Passport)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## ⚠️ Note on Technology Choice
 
-## Expanding the ESLint configuration
+The original requirement specified Angular.
+However, React was used due to familiarity and to ensure a complete and stable implementation within the time constraints.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The solution still follows the required architectural principles:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* Component-based structure
+* Clear separation of concerns
+* Scalable design for future extensions
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Tech Stack
+
+* React
+* TypeScript
+* Context API (state management)
+* CSS Modules
+
+---
+
+## ▶️ How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/MaximoCorvalan/SkyRoute-FrontEnd.git
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 3. Run the application
+
+```bash
+npm run dev
+```
+
+The app will be available at:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🧩 Features Implemented
+
+* Flight search form
+* Client-side sorting (no additional API calls)
+* Loading indicator during API requests
+* Booking modal with:
+
+  * Flight summary
+  * Price breakdown
+  * Passenger form
+* Dynamic document validation:
+
+  * Passport for international flights
+  * National ID for domestic flights
+* Error handling and basic UX improvements
+
+---
+
+## ⚖️ Trade-offs
+
+* React used instead of Angular for faster delivery
+* No authentication implemented (out of scope)
+* UI kept simple to prioritize functionality
+
+---
+
+## ⚠️ Known Limitations
+
+* No unit tests due to time constraints
+* No pagination for large result sets
+
+
+---
+
+## ⚙️ Configuration
+
+The API base URL is currently configured in a central config file:
+
+https://localhost:7074/api
+
+This was kept simple for the scope of the challenge. In a production environment, this would be managed using environment variables.
+
+## 🧪 Future Improvements
+
+* Add unit and integration tests
+* Improve UI/UX and responsiveness
+* Add pagination or virtualization for large datasets
+
+
+---

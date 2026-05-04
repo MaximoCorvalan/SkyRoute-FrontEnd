@@ -1,6 +1,8 @@
 import type { Airport } from "../interfaces/AirportType";
 
-const URL = "https://localhost:7074/api/Airports";
+import { URL_API } from "../config";
+
+const API_BASE_URL =`${URL_API}/Airports`;
 
 /**
  * Retrieves the list of available airports from the backend API.
@@ -9,7 +11,7 @@ const URL = "https://localhost:7074/api/Airports";
  */
 const getAirports = async (): Promise<Airport[]> => {
   try {
-    const response = await fetch(URL);
+    const response = await fetch(API_BASE_URL);
 
     if (!response.ok) {
       throw new Error("Failed to fetch airports");

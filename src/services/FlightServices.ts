@@ -2,8 +2,8 @@ import type {
   FlightResult,
   FlightSearchRequest,
 } from "../interfaces/FlightType";
-
-const API_BASE_URL = "https://localhost:7074/api/Flights/search";
+import { URL_API } from "../config";
+const API_BASE_URL = `${URL_API}/Flights/search`;
 
 /**
  * Searches available flights using the backend API.

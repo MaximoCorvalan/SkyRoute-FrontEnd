@@ -1,6 +1,7 @@
 import type { BookingRequest, BookingResponse } from "../interfaces/Booking";
+import { URL_API } from "../config";
 
-const URL = "https://localhost:7074/api/Bookings";
+const API_BASE_URL = `${URL_API}/Bookings`;
 
 /**
  * Creates a booking using the backend API.
@@ -14,7 +15,7 @@ const createBooking = async (
   bookingRequest: BookingRequest
 ): Promise<BookingResponse> => {
   try {
-    const response = await fetch(URL, {
+    const response = await fetch(API_BASE_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -4,6 +4,7 @@ import type { FlightResult } from "../../../interfaces/FlightType";
 import { useBookingContext } from "../../../context/Context";
 import {createBooking} from "../../../services/BookingServices";
 import  type { BookingRequest } from "../../../interfaces/Booking";
+import { Loader } from "../Loader/Loader";
 
 type ConfirmsProps = {
   flight: FlightResult;
@@ -210,7 +211,7 @@ export const Confirms = ({ flight, onClose }: ConfirmsProps) => {
             {isSubmitting && bookingReference.length === 0 ? "Confirming..." : "Confirm Booking"}
           </button>
         </form>
-
+         {isSubmitting && bookingReference.length === 0 ?<Loader></Loader>:null }
         {bookingReference && (
           <div className="confirm-modal__reference">
             Booking confirmed: <strong>{bookingReference}</strong>
