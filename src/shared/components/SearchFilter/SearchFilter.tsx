@@ -175,7 +175,7 @@ export const SearchFilter = () => {
           >
             <option value="Economy">Economy</option>
             <option value="Business">Business</option>
-            <option value="First">First Class</option>
+            <option value="First Class">First Class</option>
           </select>
         </div>
 
